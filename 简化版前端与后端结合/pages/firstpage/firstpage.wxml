@@ -1,0 +1,46 @@
+<!--pages/firstpage/firstpage.wxml-->
+<view>
+<image class="bg-image" mode="scaleToFill" src="http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcSRfRtfB0JS4uaem4AVRRwzbx24AForpW4PqTrqmi.Dj**9ZEuMQ*WLPIdettscuGtPbOgSgHxJF4VRXrqIL12Q!/r"></image>
+</view>
+<!--图片按钮-->
+<view class="tapbtn1">
+  <button class="tapbtn11" size="mini"plain="true" bindtap="go2teach">
+    <image  class="b" src='http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcV6LcSe66JYnGT1guydhwZ9srufLxvrrprMxF75gTmOtPGoSDJHv7.sqPJXZQ8OBLPrn6ObDUwLXYsQBBItT4Q0!/r'></image></button>
+
+    <button class="tapbtn12" size="mini"plain="true" bindtap="go2favor">
+    <image  class="b" src='http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcV6LcSe66JYnGT1guydhwZ.doegISjHeeZGE.gYSE83GC365hJOWi8PTlKjHfcYdKs2HgaE4F7jDD1MHc*.EqBI!/r'></image></button>
+
+    <button plain="true"class="tapbtn12" size="mini" bindtap="go2history">
+    <image  class="b" src='http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcV6LcSe66JYnGT1guydhwZ*E*IUzouj.zyNew.jZINPbNSl1jGFCiTtIRayxrSO9s3djzt2vHcvRpgXWfUEK*Z8!/r'></image></button>
+</view>
+<!--搜索框-->
+<view>
+<image  class="b1" src='http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mccsBgWWMrVnwVN5jEDgfk23IdEhSz.TbrYXnz2fxVYx4a.dcHYarIyPspfJhUtFrjhUCyxcekXJRvI6P*VB6AAg!/b&bo=yADIAAAAAAADFzI!&rf=viewer_4'></image></view>
+
+<view class="view-contain-ti">
+    <input class="input1"  placeholder="Search all GitHub" placeholder-style="text-align: center;" style="height:40px;line-height:40px;text-align: center;"></input>
+</view>
+<!--热点-->
+
+<button class='a'wx:if="{{flag}}"bindtap='houduan'>查看热点信息</button>
+<view wx:else ></view>
+  <view wx:for="{{list}}">
+    <view class='imagesize1'>
+  <image src="http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcex9v65odxH1rY9xXTvAOvLmhJV.xIdAtrZlHMOJ.N2nXaHfh6YWT8j.TMt8.VgHUQXeRq1Bkp.XkKXN0cs6cEw!/b&bo=yADIAMgAyAADFzI!&rf=viewer_4" class='in-image'   >
+  </image>
+</view>
+<view class='tapbtn0'>
+<button class="tapbtn" plain="true"size="mini"bindtap="go2repo1">
+    <image   src='http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcVLic6DQzq*DdSxj70pcRrW*f5Ujcw6XoUhmlnEwUAfVvxXi1x1v85ySw.ePP7Od14mMgQn*CmRlvqbyncsfW.g!/b&bo=vwGAAL8BgAADFzI!&rf=viewer_4'></image></button></view>
+      <view class="type1">{{item.repo}}</view>
+      <view class="type2">{{item.desc}}</view>
+   <!--  <view >语言：{{item.lang}}</view>
+      <view >star数：{{item.stars}}</view>
+      <view >增加的star数：{{item.added_stars}}</view>
+      <view >fork数：{{item.forks}}</view>
+      <view > -------- </view>     --> 
+ </view>  
+
+
+   
+

@@ -1,0 +1,170 @@
+/* pages/firstpage/firstpage.wxss */
+.bg-image{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.a{
+  top:35%;
+  left:25%;
+  position: fixed;
+  display:flex;
+ justify-content:center;
+align-items: center;
+}
+ .b{
+  width: 150rpx;
+  height: 150rpx;
+  }
+ .tapbtn1{
+  flex-direction: row;
+  align-items: center;
+   position:fixed;
+   margin:14% 11%;
+   display: flex;
+   position:absolute;
+ }
+ .tapbtn1 button[plain]{
+  border:none; 
+ }
+.tapbtn11{
+  padding: 0;
+   width: 150rpx;
+  height: 150rpx;
+border:none;
+  }
+.tapbtn12{
+  padding: 0;
+  border:none; 
+  width: 150rpx;
+  height: 150rpx;
+margin-left:10%;
+
+}
+
+.serimage{
+  width: 1000%;
+  height: 1000%;
+
+
+
+}
+
+
+.view-contain-ti {
+  display: flex;
+  height: 60px;
+  top: 25%;
+  width: 78%;
+  min-width: 78%;
+  height: 40px;
+  min-height: 40px;
+  margin-left: 18%;
+  border: 3rpx solid #5E7972;
+  border-radius: 10rpx;
+  position: absolute;
+}
+.b1{
+  top: 26%;
+  width: 60rpx;
+  height: 60rpx;
+ 
+margin-left: 7%;
+position: absolute;
+ }
+
+ .imagesize{
+  display:flex;
+  height: 110px;                    
+  justify-content: center;        
+  align-items:center;               
+   }
+ .imagesize image{ 
+   width:90%;
+   height:80%;
+   display: flex;
+  justify-content:center;
+  margin: 0 auto;
+  opacity: 0.8;
+  margin-top: 2%;
+  z-index: -1;
+  border-radius: 10rpx;
+   }
+
+   .imagesize1{
+    display:flex;
+    height: 110px;                    
+    justify-content: center;        
+    align-items:center;      
+    z-index: 999;         
+     }
+     .imagesize1 image{ 
+      width:8%;
+      height:18%;
+      display: flex;
+     justify-content:center;
+     margin: 0 20%;
+     opacity: 1;
+     margin-top: 105%;
+     margin-left: -55%;
+     z-index: 999;
+      }
+      .type1{
+        position:absolute;
+        background:transparent;
+        width: 90%;
+        margin-top:33%;
+        margin-left: 5%;
+        color: #5E7972;
+        border-radius: 50rpx; 
+         font-size: 120%;
+     text-indent: 15%;
+        font-weight: bold;
+        font-size: 90%;
+        display: block;
+        height: 5%;
+      line-height: 220%;
+      z-index: 999;
+       }
+       .type2{
+        position:absolute;
+        background:transparent;
+        width: 90%;
+        margin-top:43%;
+        margin-left: 1%;
+        color: #5E7972;
+        border-radius: 50rpx; 
+         font-size: 120%;
+     text-indent: 10%;
+        font-size: 90%;
+        display: block;
+        height: 5%;
+      line-height: 220%;
+      z-index: 999;
+       }
+       .tapbtn image{
+        width: 700rpx;
+        height: 180rpx;
+        border-radius: 30rpx;  
+        }
+        .tapbtn{
+          padding: 0;
+           width: 700rpx;
+          height: 180rpx;
+        border:none;
+
+          }
+          .tapbtn0{
+            flex-direction: row;
+            align-items: center;
+             position: absolute;
+             margin:30% 0.5%;
+             display: flex;
+             z-index: 90;
+             opacity: 0.75;
+             
+           }
+           .tapbtn0 button[plain]{
+            border:none; 
+           }
