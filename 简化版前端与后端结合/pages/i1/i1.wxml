@@ -1,2 +1,11 @@
-<!--pages/i1/i1.wxml-->
-<text>pages/i1/i1.wxml</text>
+<button bindtap='houduan'>查看1<tton>
+
+  <view wx:for="{{list}}">
+      <view >仓库名：{{item.repo}}<iew>
+      <view >简介：{{item.desc}}</view>
+      <view >语言：{{item.lang}}<iew>
+      <view >star数：{{item.stars}}<iew>
+      <view >增加的star数：{{item.added_stars}}<iew>
+      <view >fork数：{{item.forks}}<iew>
+      <view > -------- <iew>
+ <iew>
