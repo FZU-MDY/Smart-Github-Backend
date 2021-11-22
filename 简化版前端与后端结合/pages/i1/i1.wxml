@@ -1,4 +1,4 @@
-<button bindtap='houduan'>查看1<tton>
+<button bindtap='houduan'>查看热点<tton>
 
   <view wx:for="{{list}}">
       <view >仓库名：{{item.repo}}<iew>
