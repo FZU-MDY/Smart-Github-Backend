@@ -1,2 +1,38 @@
-<!--pages/hello1/hello1.wxml-->
-<text>pages/hello1/hello1.wxml</text>
+
+<view ><button bindtap='gogithub'>收藏夹</button>
+  
+</view>
+<view ><button bindtap='gogithub1'>trending</button>
+  
+</view>
+
+
+<view ><button bindtap='gogithub2'>搜索</button>
+  
+</view>
+
+<input class="input"  placeholder="此处输入user name"
+    bindinput="token"/>
+<view class="itemView">
+    <input class="input" name="userT" placeholder="此处输入token"
+    bindinput="usertoken"/>
+  </view>
+  
+
+<button bindtap='houduanButton1'>登录</button>
+<view wx:if="{{list}}">
+    {{list}} 
+    <image src="{{imagine}}"></image>
+    {{gitname}}
+    <view wx:for="{{list1}}">
+      <view >仓库名：{{item.name}}</view>
+      <view >简介：{{item.description}}</view>
+      <view >地址：{{item.html_url}}</view>
+    </view>
+  </view>
+
+  <view class="linkcopy">
+            <text bindtap='copyText' data-text="{{contents}}">复制TOKEN获取链接，并用手机浏览器打开</text>
+         </view>
+
+    
