@@ -1,2 +1,5 @@
 <!--pages/repo1/repo1.wxml-->
-<text>pages/repo1/repo1.wxml</text>
+<button wx:if="{{flag}}"bindtap="click">加载</button>
+<view wx:if="{{!flag}}" wx:for="{{list}}">
+  <button class="type11"data-a="{{item.path}}"data-b="{{item.type}}"bindtap="dir">{{item.name}}</button>
+</view>

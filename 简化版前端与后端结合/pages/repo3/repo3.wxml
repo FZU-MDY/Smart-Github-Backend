@@ -1,2 +1,5 @@
 <!--pages/repo3/repo3.wxml-->
-<text>pages/repo3/repo3.wxml</text>
+<button wx:if="{{flag}}"bindtap="click">加载</button>
+<view wx:if="{{!flag}}" >
+  <view class="type11">{{content}}</view>
+</view>

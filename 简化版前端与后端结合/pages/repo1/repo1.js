@@ -1,66 +1,55 @@
 // pages/repo1/repo1.js
+var app = getApp()
 Page({
 
-    /**
-     * 页面的初始数据
-     */
-    data: {
+  data: {
+reponame:'',
+list:'',
+flag:'1',
+  },
+click:function(){
+  this.setData({
+    list:app.globalData.list,
+    flag:null
+  })
+  
+},
+dir:function(e){
+  var index=e.currentTarget.dataset.a;
+  app.globalData.path=index;
+  var type=e.currentTarget.dataset.b;
+  if(type!="dir"){
+    app.globalData.isdir=null
+    wx.navigateTo({
+      url: '/pages/repo3/repo3',
+ 
+      })
+  }
+  else{
+    app.globalData.isdir=1
+  
+  var that = this;
+  wx.request({
+    // https://api.github.com/repos/yinyuxuan2/-/博饼
+     url: "https://api.github.com/repos/"+app.globalData.name+"/"+app.globalData.repo+"/contents/"+ app.globalData.path,
+     method: 'get',
+     header: {
+     'content-type': 'application/json' // 默认值
+     },
+     success: function (res) {
+     console.log(res.data)//打印到控制台
 
-    },
+      app.globalData.list=res.data; 
+     }
+     })
+   wx.navigateTo({
+     url: '/pages/repo2/repo2',
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
+     })}
+},
+  onLoad:function(){
+   
+  }
+  
+ 
 })
