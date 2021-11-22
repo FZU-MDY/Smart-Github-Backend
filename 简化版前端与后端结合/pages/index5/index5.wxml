@@ -1,2 +1,10 @@
 <!--pages/index5/index5.wxml-->
-<text>pages/index5/index5.wxml</text>
+<button bindtap='houduan'>查看<tton>
+
+  <view wx:for="{{list}}">
+      <view >仓库名：{{item.name}}</view>
+      <view >简介：{{item.description}}</view>
+      <view >语言：{{item.language}}<iew>
+      <view >关注数：{{item.stargazers_count}}<iew>
+      <view > -------- <iew>
+ <iew>
