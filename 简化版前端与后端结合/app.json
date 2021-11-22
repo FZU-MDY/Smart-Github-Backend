@@ -1,0 +1,23 @@
+{
+  "pages":[ "pages/mypage/mypage",
+    "pages/repo1/repo1",
+    "pages/repo2/repo2",
+    "pages/repo3/repo3",
+    "pages/hello1/hello1",
+    "pages/i1/i1",
+    "pages/search1/search1",
+    "pages/index/index",
+    "pages/index5/index5",
+    "pages/firstpage/firstpage"
+   
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
