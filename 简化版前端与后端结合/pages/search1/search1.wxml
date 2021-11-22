@@ -1,2 +1,17 @@
-<!--pages/search1/search1.wxml-->
-<text>pages/search1/search1.wxml</text>
+<!--pagesarcharch.wxml-->
+
+
+<view class="itemView">
+    <input class="input" name="userT" placeholder="此处输入搜索内容"
+    bindinput="usertoken"/>
+  <iew>
+  <button bindtap='houduan'>搜索<tton>
+  <view wx:for="{{list}}">
+      <view >仓库名：{{item.name}}</view>
+      <view >简介：{{item.description}}</view>
+      <view >语言：{{item.language}}<iew>
+      <view >star数：{{item.stargazers_count}}<iew>
+      <view >增加的star数：{{item.owner.login}}<iew>
+      <view >fork数：{{item.forks_count}}<iew>
+      <view > -------- <iew>
+ <iew>
