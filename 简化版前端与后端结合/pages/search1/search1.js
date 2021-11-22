@@ -1,66 +1,40 @@
-// pages/search1/search1.js
+// pagesarcharch.js
 Page({
 
-    /**
-     * 页面的初始数据
-     */
-    data: {
-
+data: {
+key:'',
+list:''
+  },
+  usertoken:function(e){
+    this.setData({
+key:e.detail.value
+    })
+  },
+  houduan: function () {
+    var that = this;
+    wx.request({
+    url: "https://api.github.com/search/repositories?q="+this.data.key,
+    method: 'get',
+    header: {
+    'content-type': 'application/json' // 默认值
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    success: function (res) {
+    console.log(res.data)//打印到控制台
+    
+    if (res.data == null) {
+    var toastText = '数据获取失败';
+    wx.showToast({
+    title: toastText,
+    icon: '',
+    duration: 2000
+    });
+    } else {
+    that.setData({
+      list:res.data.items
+    })
     }
+    }
+    })
+  }
+
 })
