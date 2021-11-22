@@ -1,4 +1,4 @@
-// pagesarcharch.js
+
 Page({
 
 data: {
