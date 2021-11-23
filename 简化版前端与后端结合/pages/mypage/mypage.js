@@ -158,6 +158,12 @@ Page({
  
       })
       
+  },
+  favor:function(){
+    wx.navigateTo({
+      url: '/pages/favorpage/favorpage',
+ 
+      })
   }
 
 })
