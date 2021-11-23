@@ -61,6 +61,7 @@
 </view>
 
   <button class="unlogin" bindtap='unlogin'>退出登录</button>
+   <button  bindtap='favor'>收藏</button>
     </view>  
 
 
