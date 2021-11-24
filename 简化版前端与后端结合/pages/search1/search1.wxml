@@ -1,17 +1,31 @@
-<!--pagesarcharch.wxml-->
+<view class="SearchBox">
+  <view class="Search_input_top_box">
+    
+    <input class="Search_Input" focus="{{name_focus}}" placeholder='请输入关键词搜索GitHub仓库' bindinput='inputvalue' value="{{input_value}}"></input>
+    <view class="Search_btn" bindtap='search'>{{SearchText}}</view>
+  </view>
+  <view class="Search_xian"></view>
+  <!--搜索记录盒子-->
+  <view class="Search_record_box">
+    <view class="Search_record_text">
+      <text>搜索记录</text>
+    </view>
+    <!--记录词的盒子-->
+    <view class="History_box">
+      <view class="History-list">
+        <text wx:for="{{listarr}}" data-text="{{item}}" wx:key="key" bindtap='this_value'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <button bindtap="delete_list">删除记录</button>
+</view>
 
-
-<view class="itemView">
-    <input class="input" name="userT" placeholder="此处输入搜索内容"
-    bindinput="usertoken"/>
-  <iew>
-  <button bindtap='houduan'>搜索<tton>
-  <view wx:for="{{list}}">
+<view wx:for="{{list}}">
       <view >仓库名：{{item.name}}</view>
       <view >简介：{{item.description}}</view>
-      <view >语言：{{item.language}}<iew>
-      <view >star数：{{item.stargazers_count}}<iew>
-      <view >增加的star数：{{item.owner.login}}<iew>
-      <view >fork数：{{item.forks_count}}<iew>
-      <view > -------- <iew>
- <iew>
+      <view >语言：{{item.language}}</view>
+      <view >star数：{{item.stargazers_count}}</view>
+      <view >增加的star数：{{item.owner.login}}</view>
+      <view >fork数：{{item.forks_count}}</view>
+      <view > -------- </view>
+ </view>  
