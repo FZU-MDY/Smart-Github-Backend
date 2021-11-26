@@ -8,25 +8,48 @@
 .input1{
   top: 25%;
   position:fixed;
- 
+  color: #5E7972;
+  font-size: 120%;
+margin-left:22%;
+height: auto;
 }
 .login{
   top: 45%;
   margin-top:60%;
   display:flex;
   justify-content: center;
+  color: #5E7972;
+  border-radius: 50rpx;
  
 }
 .input2{
   top: 35%;
   position:fixed;
- 
+  color: #5E7972;
+  font-size: 120%;
+  margin-left:21%;
 }
 .linkcopy{
-  top: 60%;
+  top: 52%;
   position:fixed;
-  
+  color: #5E7972;
 }
+.divLineX{
+  background: #B78781;
+  width: 90%;
+  height: 1.5rpx;
+  margin-left: 5%;
+  margin-top: 15%;
+}
+.divLineX1{
+  background: #B78781;
+  width: 90%;
+  height: 1.5rpx;
+  margin-left: 5%;
+  margin-top: -55%;
+}
+
+
 .itemView{
  
   position:fixed;
@@ -48,26 +71,13 @@ line-height: 200%;
   border-radius: 50rpx;
 
 }
-.type2{
-  text-align: center;
-  font-weight: bold;
-  font-size: 100%;
-  position:absolute;
-  background:transparent;
-  width: 90%;
-  display: block;
-  height: 6.5%;
-line-height: 200%;
-  margin-top:-63%;
-  margin-left: 5%;
-  color: #5E7972;
 
-}
 .imagesize{
   display:flex;
   height: 110px;                    
   justify-content: center;        
-  align-items:center;               
+  align-items:center;   
+  margin-top: 10%;            
   
  }
  .imagesize image { 
@@ -96,23 +106,7 @@ line-height: 200%;
      margin-left: -55%;
      z-index: 999;
       }
-.type11{
-  position:absolute;
-  background:transparent;
-  width: 90%;
-  margin-top:-21%;
-  margin-left: 5%;
-  color: #5E7972;
-  border-radius: 50rpx; 
-   font-size: 120%;
-text-indent: 15%;
-  font-weight: bold;
-  font-size: 90%;
-  display: block;
-  height: 5%;
-line-height: 220%;
-z-index: 999;
- }
+
  .type21{
   position:absolute;
   background:transparent;
@@ -208,10 +202,53 @@ z-index: 999;
       position: flex;
       left: 0;
      width:50%;
-      bottom: 0;
       display:flex;
+      margin-top: -15.5%;
       justify-content: center;
-
+      color: #5E7972;
+      border-radius: 50rpx;
+     }
+     .about{
+      position: flex;
+      left: 0;
+     width:50%;
+      display:flex;
+      margin-top: 5%;
+      justify-content: center;
+      color: #5E7972;
+      border-radius: 50rpx;
+     }
+     .bt1{
+      margin-top:4%; 
+      color: #5E7972; 
+       border-radius: 50rpx;    
+   
+        display: block;  
+        line-height: 220%;
+        z-index: 999;
+    
+    
      }
     
+    .type11{
+
+
+          position:absolute;
+          background:transparent;
+          width: 90%;
+          margin-top:0%;
+          text-align: center;
+          color: #5E7972;
+          border-radius: 50rpx; 
+           font-size: 300%;
+     
+          font-size: 90%;
+          display: block;
+          height: 5%;
+        line-height: 220%;
+        font-weight: bold;
+        z-index: 999;
+         
+    
+     }
     

@@ -2,18 +2,25 @@
 <view>
 <image class="bg-image" mode="scaleToFill" src="http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcSRfRtfB0JS4uaem4AVRRwzbx24AForpW4PqTrqmi.Dj**9ZEuMQ*WLPIdettscuGtPbOgSgHxJF4VRXrqIL12Q!/r"></image>
 </view>
+
+
+<view class="hfhghf">
+ <button style="background-color: transparent;"></button>
+ </view>
+
 <!--图片按钮-->
 <view class="tapbtn1">
   <button class="tapbtn11" size="mini"plain="true" bindtap="go2teach">
-    <image  class="b" src='http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcV6LcSe66JYnGT1guydhwZ9srufLxvrrprMxF75gTmOtPGoSDJHv7.sqPJXZQ8OBLPrn6ObDUwLXYsQBBItT4Q0!/r'></image></button>
+    <image  class="b" src="http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcV6LcSe66JYnGT1guydhwZ9srufLxvrrprMxF75gTmOtPGoSDJHv7.sqPJXZQ8OBLPrn6ObDUwLXYsQBBItT4Q0!/r"></image></button>
 
     <button class="tapbtn12" size="mini"plain="true" bindtap="go2favor">
-    <image  class="b" src='http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcV6LcSe66JYnGT1guydhwZ.doegISjHeeZGE.gYSE83GC365hJOWi8PTlKjHfcYdKs2HgaE4F7jDD1MHc*.EqBI!/r'></image></button>
+    <image  class="b" src="http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcV6LcSe66JYnGT1guydhwZ.doegISjHeeZGE.gYSE83GC365hJOWi8PTlKjHfcYdKs2HgaE4F7jDD1MHc*.EqBI!/r"></image></button>
 
-    <button plain="true"class="tapbtn12" size="mini" bindtap="go2history">
-    <image  class="b" src='http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcV6LcSe66JYnGT1guydhwZ*E*IUzouj.zyNew.jZINPbNSl1jGFCiTtIRayxrSO9s3djzt2vHcvRpgXWfUEK*Z8!/r'></image></button>
+    <button plain="true"class="tapbtn12" size="mini" bindtap="go2search1">
+    <image  class="b" src="http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mceXyGfbHmR5N.lhy6UTdkIE.JL2OOTXt0jsOsAMO11C0ImM6lQLzfx7ofXjP9L4*oeHQ09biJoqGCxc5NvHM2Sk!/b&bo=bgBuAG4AbgADFzI!&rf=viewer_4"></image></button>
 </view>
-<!--搜索框-->
+
+<!--搜索框
 <view>
 <image  class="b1" src='http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mccsBgWWMrVnwVN5jEDgfk23IdEhSz.TbrYXnz2fxVYx4a.dcHYarIyPspfJhUtFrjhUCyxcekXJRvI6P*VB6AAg!/b&bo=yADIAAAAAAADFzI!&rf=viewer_4'></image></view>
 
@@ -22,25 +29,50 @@
 </view>
 <!--热点-->
 
-<button class='a'wx:if="{{flag}}"bindtap='houduan'>查看热点信息</button>
-<view wx:else ></view>
-  <view wx:for="{{list}}">
-    <view class='imagesize1'>
-  <image src="http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcex9v65odxH1rY9xXTvAOvLmhJV.xIdAtrZlHMOJ.N2nXaHfh6YWT8j.TMt8.VgHUQXeRq1Bkp.XkKXN0cs6cEw!/b&bo=yADIAMgAyAADFzI!&rf=viewer_4" class='in-image'   >
-  </image>
+<button class='a'bindtap='houduan'  style="position:absolute;background:transparent;width: 40%;margin-top:45%;margin-left: 68%;color: #5E7972;border-radius: 50rpx;  font-size: 85%; ">查看热点信息</button>
+<view class='tselect_box'>
+ <view class='tselect' catchtap='tselectTap'>
+    <text hidden="{{!tisshow}}" class='tselect_text'>选择时间</text>
+  <text hidden="{{tisshow}}" class='tselect_text'>{{tselectData[tindex]}}</text>
+  <image class='tselect_img {{tshow&&"tselect_img_rotate"}}' src="http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcXs7yIofVt*Z.uwgdqFCja1AQ2KKc2zYYv7D.ymm4vSRNK6Rpzuhv6VMqGrk7YX97EFg1L.Rg1dJixrwULi1qak!/b&bo=yADIAMgAyAADFzI!&rf=viewer_4"></image>   
+ </view>
+ <view class='toption_box' style='height:{{tshow?(tselectData.length>5?300:tselectData.length*60):0}}rpx;'>
+  <text class='toption' style='{{tindex==tselectData.length-1&&"border:0;"}}' wx:for='{{tselectData}}' wx:key='this' data-tindex='{{index}}' catchtap='toptionTap'>{{item}}</text>
+ </view>
 </view>
-<view class='tapbtn0'>
-<button class="tapbtn" plain="true"size="mini"bindtap="go2repo1">
-    <image   src='http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcVLic6DQzq*DdSxj70pcRrW*f5Ujcw6XoUhmlnEwUAfVvxXi1x1v85ySw.ePP7Od14mMgQn*CmRlvqbyncsfW.g!/b&bo=vwGAAL8BgAADFzI!&rf=viewer_4'></image></button></view>
-      <view class="type1">{{item.repo}}</view>
-      <view class="type2">{{item.desc}}</view>
-   <!--  <view >语言：{{item.lang}}</view>
-      <view >star数：{{item.stars}}</view>
-      <view >增加的star数：{{item.added_stars}}</view>
-      <view >fork数：{{item.forks}}</view>
-      <view > -------- </view>     --> 
- </view>  
 
-
+<view class='lselect_box'>
+ <view class='lselect' catchtap='lselectTap'>
+    <text hidden="{{!lisshow}}" class='lselect_text'>选择语言</text>
+  <text hidden="{{lisshow}}" class='lselect_text'>{{lselectData[lindex]}}</text>
+  <image class='lselect_img {{lshow&&"lselect_img_rotate"}}' src="http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcXs7yIofVt*Z.uwgdqFCja1AQ2KKc2zYYv7D.ymm4vSRNK6Rpzuhv6VMqGrk7YX97EFg1L.Rg1dJixrwULi1qak!/b&bo=yADIAMgAyAADFzI!&rf=viewer_4"></image>   
+ </view>
+ <view class='loption_box' style='height:{{lshow?(lselectData.length>5?300:lselectData.length*60):0}}rpx;'>
+  <text class='loption' style='{{lindex==lselectData.length-1&&"border:0;"}}' wx:for='{{lselectData}}' wx:key='this' data-lindex='{{index}}' catchtap='loptionTap'>{{item}}</text>
+ </view>
+</view>
+<view wx:if="{{!flag}}" ></view>
+<view class="trending">
+  <view   wx:for="{{list}}">
+    
+<view>
+<button  data-a="{{item.name}}"data-b="{{item.owner.login}}"class="bt1" style="width: 90%;" bindtap="go2repo1">
    
+   
+      <text >仓库名：{{item.name}}</text>
+      <text >\n 简介：{{item.description}}</text >
+        <text >\n 语言：{{item.language}}</text >
+          <text >\n star数：{{item.stargazers_count}}</text >
+              <text >\n fork数：{{item.forks_count}}</text > </button></view>
+ </view>  
+</view>
 
+
+ 
+<!--
+ show&&"select_img_rotate"-----给显示框右边的下拉箭头添加动画
+
+ height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;-----给改变下拉框高度，实现下拉框的显示隐藏，每个下拉选项的高度为60，下拉框的最大高度这里设置的是300，所以这里写成当数据长度大于5时，下拉框高度为300，反之下拉框高度为数据长度乘以60
+
+ index==selectData.length-1&&"border:0;"-----取消下拉选项的最后一个的下边框
+ -->

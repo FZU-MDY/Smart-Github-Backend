@@ -1,5 +1,11 @@
 <!--pages/repo2/repo2.wxml-->
-<button wx:if="{{flag}}"bindtap="click">加载</button>
+<view>
+<image class="bg-image" mode="scaleToFill" src="http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcRCTnuQAMH0zq4JdHDzfoODgN3qYW*6YU8HX3dQKGZkzR.wGG26HbHb3o1g4eNAqs5mDFyPnVxyNqvRjq33BQdI!/r"></image>
+</view>
+<view class="hfhghf">
+ <button style="background-color: transparent;"></button>
+ </view>
+<button wx:if="{{flag}}"bindtap="click" style="position:absolute;background:white;width: 90%;margin-top:15%;margin-left: 5%;color: #5E7972;border-radius: 50rpx;  font-size: 100%;">加载</button>
 <view wx:if="{{!flag}}" wx:for="{{list}}">
   <button class="type11"data-a="{{item.path}}"data-b="{{item.type}}"bindtap="dir">{{item.name}}</button>
 </view>

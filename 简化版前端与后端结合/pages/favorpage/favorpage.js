@@ -8,29 +8,21 @@ list:''
   houduan: function () {
     var that = this;
     that.data.userT=app.globalData.user;
-    wx.request({
-    url: "https://api.github.com/users/"+that.data.userT+"/starred",
-    method: 'get',
-    header: {
-    'content-type': 'application/json' // 默认值
-    },
-    success: function (res) {
-    console.log(res.data)//打印到控制台
-    
-    if (res.data == null) {
-    var toastText = '数据获取失败';
-    wx.showToast({
-    title: toastText,
-    icon: '',
-    duration: 2000
-    });
-    } else {
-    that.setData({
-      list:res.data
+    wx.cloud.callFunction({
+      name: "search6",   //云函数中文件夹的名称
+      data: {
+       userT:that.data.userT
+      },
+      success: function (res)  {
+        var list=JSON.parse(res.result)
+        
+        console.log(list)
+        that.setData({
+          list:list
+        })
+      }
     })
-    }
-    }
-    })
+  6
   },
   go2repo1:function(e){
     var index=e.currentTarget.dataset.a;

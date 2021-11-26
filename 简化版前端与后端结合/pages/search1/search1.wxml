@@ -1,7 +1,10 @@
+<view>
+<image class="bg-image" mode="scaleToFill" src="http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcRCTnuQAMH0zq4JdHDzfoODgN3qYW*6YU8HX3dQKGZkzR.wGG26HbHb3o1g4eNAqs5mDFyPnVxyNqvRjq33BQdI!/r"></image>
+</view>
 <view class="SearchBox">
   <view class="Search_input_top_box">
     
-    <input class="Search_Input" focus="{{name_focus}}" placeholder='请输入关键词搜索GitHub仓库' bindinput='inputvalue' value="{{input_value}}"></input>
+    <input class="Search_Input" focus="{{name_focus}}" placeholder='请输入关键词搜索GitHub仓库'  placeholder-style="color:#5E7972;" bindinput='inputvalue' value="{{input_value}}"></input>
     <view class="Search_btn" bindtap='search'>{{SearchText}}</view>
   </view>
   <view class="Search_xian"></view>
@@ -10,6 +13,7 @@
     <view class="Search_record_text">
       <text>搜索记录</text>
     </view>
+    <button bindtap="delete_list"style="background:transparent;width: 35%;margin-top:-7%;margin-left: 68%;color: #5E7972; font-size: 28rpx; text-indent:20%;">删除记录</button>
     <!--记录词的盒子-->
     <view class="History_box">
       <view class="History-list">
@@ -17,15 +21,18 @@
       </view>
     </view>
   </view>
-  <button bindtap="delete_list">删除记录</button>
+
 </view>
 
 <view wx:for="{{list}}">
-      <view >仓库名：{{item.name}}</view>
-      <view >简介：{{item.description}}</view>
-      <view >语言：{{item.language}}</view>
-      <view >star数：{{item.stargazers_count}}</view>
-      <view >增加的star数：{{item.owner.login}}</view>
-      <view >fork数：{{item.forks_count}}</view>
-      <view > -------- </view>
+  <view >
+<button data-a="{{item.name}}"data-b="{{item.owner.login}}"class="bt1" style="width: 90%;"bindtap="go2repo1">
+
+
+      <text >仓库名：{{item.name}}</text>
+      <text >\n 简介：{{item.description}}</text >
+        <text >\n 语言：{{item.language}}</text >
+          <text >\n star数：{{item.stargazers_count}}</text >
+              <text >\n fork数：{{item.forks_count}}</text >
+      <text > \n  -------- </text > </button></view>
  </view>  

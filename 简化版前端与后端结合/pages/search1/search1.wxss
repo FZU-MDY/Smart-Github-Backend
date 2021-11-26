@@ -1,1 +1,151 @@
-/* pages/search1/search1.wxss */
+/* pages/search/search.wxss */
+page {
+  background: #ffffff;
+}
+.Search_input_top_box {
+  margin-top: 12rpx;
+  position: relative;
+  margin-bottom: 16rpx;
+}
+ 
+.Search_Input {
+  width: 600rpx;
+  height: 70rpx;
+  border-radius: 5px;
+  background: #ececec;
+  margin-left: 20rpx;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 58rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+
+  color: #5E7972;
+  margin-top: 8%;
+}
+ 
+.Search_btn {
+  display: inline-block;
+  width: 130rpx;
+  height: 58rpx;
+  font-size: 32rpx;
+  color: #5E7972;
+  font-weight: bold;
+  /* margin-top: 18rpx; */
+  vertical-align: middle;
+  line-height: 58rpx;
+  text-align: center;
+  margin-top: 8%;
+}
+ 
+.Search_ico {
+  width: 100%;
+  height: 100%;
+}
+ 
+.Search_ico_box {
+  position: absolute;
+  left: 40rpx;
+  top: 5rpx;
+  width: 23rpx;
+  height: 28rpx;
+  z-index: 999;
+}
+ 
+.Search_xian {
+  width: 90%;
+  height: 1rpx;
+  background: #B78781;
+  margin-bottom: 32rpx;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+ 
+.Search_record_text>text {
+  font-size: 28rpx;
+  color: #5E7972;
+  margin-left: 36.5rpx;
+  margin-top:12%;
+  font-weight:bold;
+  
+}
+.hot_box_text>text {
+  font-size: 28rpx;
+  color: #898989;
+  margin-left: 20rpx;
+}
+.hot_box_text {
+   margin-top: 40rpx;
+}
+.Search_record_text>image {
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+  float: right;
+  margin-right: 20rpx;
+}
+
+.History-list {
+  margin-left: 40rpx;
+  margin-top: 28rpx;
+  margin-right: 20rpx;
+}
+ 
+.History-list>text {
+  display: inline-block;
+  height: 56rpx;
+  border-radius: 5px;
+  opacity: 0.75;
+  background: #f5f5f5;
+  max-width: 100%;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  line-height: 56rpx;
+  font-size: 26rpx;
+  color:  #5E7972;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  box-sizing: border-box;
+  margin-right: 20rpx;
+}
+
+.imagesize11{
+  display:flex;
+  height: 110px;                    
+  justify-content: center;        
+  align-items:center;   
+  z-index: 999;            
+   }
+   .imagesize11 image{ 
+    width:8%;
+    height:18%;
+    display: flex;
+   justify-content:center;
+   margin: 5% 20%;
+   opacity: 1;
+   margin-top: 0%;
+   margin-left: -55%;
+   z-index: 999;
+    }
+
+
+   .bg-image{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+
+    .bt1{
+      margin-top:4%; 
+      color: #5E7972; 
+       border-radius: 50rpx;    
+   
+        display: block;  
+        line-height: 220%;
+        z-index: 999;
+    
+    
+     }

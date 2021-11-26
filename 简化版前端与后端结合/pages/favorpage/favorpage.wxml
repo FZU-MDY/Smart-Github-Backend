@@ -1,26 +1,25 @@
    <view>
 <image class="bg-image" mode="scaleToFill" src="http://r.photo.store.qq.com/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcRCTnuQAMH0zq4JdHDzfoODgN3qYW*6YU8HX3dQKGZkzR.wGG26HbHb3o1g4eNAqs5mDFyPnVxyNqvRjq33BQdI!/r"></image>
 </view>
+<view class="hfhghf">
+ <button style="background-color: transparent;"></button>
+ </view>
      
       <view wx:if="{{!list}}">
-     <button bindtap="houduan">查看</button></view>
+     <button bindtap="houduan"  style="position:absolute;background:white;width: 90%;margin-top:15%;margin-left: 5%;color: #5E7972;border-radius: 50rpx;  font-size: 120%;">查看</button></view>
 
    
     <view wx:for="{{list}}">
-      <view class='tapbtn01'>
-<button data-a="{{item.name}}"data-b="{{item.owner.login}}"class="tapbtn1" size="mini"plain="true" bindtap="go2repo1">
-    <image  class="c1" src='http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcVLic6DQzq*DdSxj70pcRrW*f5Ujcw6XoUhmlnEwUAfVvxXi1x1v85ySw.ePP7Od14mMgQn*CmRlvqbyncsfW.g!/b&bo=vwGAAL8BgAADFzI!&rf=viewer_4'></image></button></view>
-<view class='imagesize11'>
-  <image src="http://m.qpic.cn/psc?/V13o297P0pKsa6/45NBuzDIW489QBoVep5mcex9v65odxH1rY9xXTvAOvLmhJV.xIdAtrZlHMOJ.N2nXaHfh6YWT8j.TMt8.VgHUQXeRq1Bkp.XkKXN0cs6cEw!/b&bo=yADIAMgAyAADFzI!&rf=viewer_4" class='in-image'   >
-   
-  </image>
-</view>
-    <text class="type11">{{item.full_name}}</text>
-    <text class="type21">{{item.description}}</text>
-    <text class="type31">updated {{item.updated_at}}</text>
+      <view >
+<button data-a="{{item.name}}"data-b="{{item.owner.login}}"class="bt1" style="width: 90%;" bindtap="go2repo1">
+
+
+    <text class="type11"  style="width:90%" >{{item.full_name}}</text>
+    <text style="font-size: 90%;color: #5E7972; text-align: center;">\n {{item.description}}</text>
+    <text style="font-size: 90%;color: #B78781; text-align: center;">\n updated {{item.updated_at}}</text>
    
     <view >语言：{{item.language}}</view>
-      <view >关注数：{{item.stargazers_count}}</view>
+      <view >关注数：{{item.stargazers_count}}</view></button></view>
    <!-- <view >地址：{{item.html_url}}</view>-->
   </view>
     

@@ -1,3 +1,4 @@
+var app=getApp()
 Page({
  
   /**
@@ -43,7 +44,7 @@ Page({
       console.log(this.data.inputVal)
       console.log(this.data.input_value)
       //判断取值是手动输入还是点击赋值
-     if (this.data.input_value == ""){
+     //if (this.data.input_value == ""){
         // console.log('进来第er个')
         // 判断数组中是否已存在
         let arrnum = arr.indexOf(this.data.inputVal);
@@ -57,7 +58,7 @@ Page({
           arr.unshift(this.data.inputVal);
         }
       
-     }else  {
+     /* }else  {
       this.setData({
         inputVal:this.data.input_value
       })
@@ -71,31 +72,22 @@ Page({
           arr.unshift(this.data.input_value);
         }
  
-      }
+      }*/
       console.log(this.data.input_value)
-      wx.request({
-        url: "https://api.github.com/search/repositories?q="+this.data.inputVal,
-        method: 'get',
-        header: {
-        'content-type': 'application/json' // 默认值
+      wx.cloud.callFunction({
+        name: "search7",   //云函数中文件夹的名称
+        data: {
+          inputVal:this.data.inputVal
         },
-        success: function (res) {
-        console.log(res.data)//打印到控制台
-        
-        if (res.data == null) {
-        var toastText = '数据获取失败';
-        wx.showToast({
-        title: toastText,
-        icon: '',
-        duration: 2000
-        });
-        } else {
-        that.setData({
-          list:res.data.items
-        })
+        success: function (res)  {
+          var list=JSON.parse(res.result)
+          
+          console.log(list)
+          that.setData({
+            list:list.items
+          })
         }
-        }
-        })
+      })
       console.log(arr)
  
       //存储搜索记录
@@ -140,6 +132,7 @@ Page({
     })
     let value = e.currentTarget.dataset.text;
     this.setData({
+      inputVal:value,
       input_value:value,
       SearchText: "搜索",
       keydown_number: 1
@@ -164,8 +157,31 @@ Page({
         })
       }
     })
+
+  },
+  go2repo1:function(e){
+    var index=e.currentTarget.dataset.a;
+     app.globalData.repo=index;
+     app.globalData.name=e.currentTarget.dataset.b;
+     console.log(app.globalData.name);
+     var that = this;
+     wx.cloud.callFunction({
+      name: "search4",   //云函数中文件夹的名称
+      data: {
+       name:app.globalData.name+'/',
+       repo:app.globalData.repo
+      },
+      success: function (res)  {
+        var list=JSON.parse(res.result)
+        
+        console.log(list)
+        app.globalData.list=list
+      }
+    })
+    wx.navigateTo({
+      url: '/pages/repo1/repo1',
  
- 
- 
+      })
+      
   },
 })

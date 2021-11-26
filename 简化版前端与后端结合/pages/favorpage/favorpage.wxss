@@ -96,23 +96,7 @@ line-height: 200%;
      margin-left: -55%;
      z-index: 999;
       }
-.type11{
-  position:absolute;
-  background:transparent;
-  width: 90%;
-  margin-top:-21%;
-  margin-left: 5%;
-  color: #5E7972;
-  border-radius: 50rpx; 
-   font-size: 120%;
-text-indent: 15%;
-  font-weight: bold;
-  font-size: 90%;
-  display: block;
-  height: 5%;
-line-height: 220%;
-z-index: 999;
- }
+
  .type21{
   position:absolute;
   background:transparent;
@@ -150,26 +134,9 @@ z-index: 999;
   height: 180rpx;
   border-radius: 30rpx;  
   }
-  .tapbtn1{
-    padding: 0;
-     width: 700rpx;
-    height: 280rpx;
-  border:none;
 
-    }
-    .tapbtn01{
-      flex-direction: row;
-      align-items: center;
-       position:fixed;
-       margin:5% 0.5%;
-       display: flex;
-       position:absolute;
-       opacity: 0.75;
-       z-index: 90;
-            }
-     .tapbtn01 button[plain]{
-      border:none; 
-     }
+
+   
      .header {
       text-align: center;  
       margin: 0 auto;
@@ -215,3 +182,37 @@ z-index: 999;
      }
     
    
+
+     .bt1{
+      margin-top:4%; 
+      color: #5E7972; 
+       border-radius: 50rpx;    
+   
+        display: block;  
+        line-height: 220%;
+        z-index: 999;
+    
+    
+     }
+    
+    .type11{
+
+
+          position:absolute;
+          background:transparent;
+          width: 90%;
+          margin-top:0%;
+          text-align: center;
+          color: #5E7972;
+          border-radius: 50rpx; 
+           font-size: 300%;
+     
+          font-size: 90%;
+          display: block;
+          height: 5%;
+        line-height: 220%;
+        font-weight: bold;
+        z-index: 999;
+         
+    
+     }

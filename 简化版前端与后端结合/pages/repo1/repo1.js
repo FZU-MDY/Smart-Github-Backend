@@ -8,6 +8,7 @@ list:'',
 flag:'1',
   },
 click:function(){
+  console.log(app.globalData.list)
   this.setData({
     list:app.globalData.list,
     flag:null
@@ -29,27 +30,29 @@ dir:function(e){
     app.globalData.isdir=1
   
   var that = this;
-  wx.request({
-    // https://api.github.com/repos/yinyuxuan2/-/博饼
-     url: "https://api.github.com/repos/"+app.globalData.name+"/"+app.globalData.repo+"/contents/"+ app.globalData.path,
-     method: 'get',
-     header: {
-     'content-type': 'application/json' // 默认值
-     },
-     success: function (res) {
-     console.log(res.data)//打印到控制台
-
-      app.globalData.list=res.data; 
-     }
-     })
+  wx.cloud.callFunction({
+    name: "search5",   //云函数中文件夹的名称
+    data: {
+     name:app.globalData.name+'/'+app.globalData.repo+'/contents/'+app.globalData.path,
+    },
+    success: function (res)  {
+      var list=JSON.parse(res.result)
+      
+      console.log(list)
+      app.globalData.list=list; 
+    }
+  })
+  
    wx.navigateTo({
      url: '/pages/repo2/repo2',
 
      })}
 },
-  onLoad:function(){
-   
-  }
+onLoad: function () {
+  wx.setNavigationBarTitle({
+    title: 'Code',
+  })
+}
   
  
 })

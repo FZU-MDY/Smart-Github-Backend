@@ -23,57 +23,38 @@ Page({
     var that = this;
     if(that.data.token==''){}
     else{
-    wx.request({
-    url: "https://api.github.com/users/"+that.data.userT,
-    method: 'get',
-    header: {
-    'content-type': 'application/json' // 默认值
-    },
-    success: function (res) {
-    console.log(res.data)//打印到控制台
-    
-   
-    
-    if (res.data.login == null) {
-    var toastText = '无此用户';
-    wx.showToast({
-    title: toastText,
-    icon: '',
-    duration: 2000
-    });
-    } else {
-    that.setData({
-      list:res.data.login,
-      imagine:res.data.avatar_url,
-      flag:'1'
-    })
-    }
-    }
-    })
-
-    wx.request({
-      url: "https://api.github.com/users/"+that.data.userT+"/repos",
-      method: 'get',
-      header: {
-      'content-type': 'application/json' // 默认值
+    app.globalData.user=that.data.userT;
+    wx.cloud.callFunction({
+      name: "search1",   //云函数中文件夹的名称
+      data: {
+       userT:that.data.userT
       },
-      success: function (res) {
-      console.log(res.data)//打印到控制台
-
-      if (res.data.length == null) {
-      var toastText = '数据获取失败';
-      wx.showToast({
-      title: toastText,
-      icon: '',
-      duration: 2000
-      });
-      } else {
-      that.setData({
-       list1:res.data
-      })
+      success: function (res)  {
+        var list=JSON.parse(res.result)
+        
+        console.log(list)
+        that.setData({
+            list:list.login,
+            imagine:list.avatar_url,
+            flag:'1'
+        })
       }
+    })
+    wx.cloud.callFunction({
+      name: "search3",   //云函数中文件夹的名称
+      data: {
+       userT:that.data.userT
+      },
+      success: function (res)  {
+        var list=JSON.parse(res.result)
+        
+        console.log(list)
+        that.setData({
+          list1:list
+        })
       }
-      })}
+    })
+    }
     },
     usertoken:function(e){
       this.setData({
@@ -140,19 +121,19 @@ Page({
     var index=e.currentTarget.dataset.a;
      app.globalData.repo=index;
      var that = this;
-    wx.request({
-     // https://api.github.com/repos/yinyuxuan2/-
-      url: "https://api.github.com/repos/"+app.globalData.name+"/"+app.globalData.repo+"/contents",
-      method: 'get',
-      header: {
-      'content-type': 'application/json' // 默认值
+     wx.cloud.callFunction({
+      name: "search4",   //云函数中文件夹的名称
+      data: {
+       name:app.globalData.name+'/',
+       repo:app.globalData.repo
       },
-      success: function (res) {
-      console.log(res.data)//打印到控制台
-
-       app.globalData.list=res.data; 
+      success: function (res)  {
+        var list=JSON.parse(res.result)
+        
+        console.log(list)
+        app.globalData.list=list
       }
-      })
+    })
     wx.navigateTo({
       url: '/pages/repo1/repo1',
  
